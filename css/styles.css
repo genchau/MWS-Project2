@@ -172,9 +172,9 @@ nav h1 a {
 }
 #restaurants-list li {
   background-color: #fff;
-  border: 2px solid #ccc;
+  border: .125em solid #ccc;
   font-family: Arial,sans-serif;
-  min-height: 380px;
+  min-height: 25em;
   text-align: left;
   width:calc((100% - 100px)/4);  /* used to display restaurants side by side suggested by fellow student Levi in slack     */
 }
@@ -254,7 +254,7 @@ nav h1 a {
 }
 #restaurant-address {
   font-size: .625em;
-  margin: 10px 0px;
+  margin: 0.625em 0em;
 }
 #restaurant-cuisine {
   background-color: #333;
