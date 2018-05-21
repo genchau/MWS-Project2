@@ -2,34 +2,50 @@
 /* CSS Document */
 /* 5/20 changed font to use em and percentages per Udemity course*/
 
-body,td,th,p{
+body,
+td,
+th,
+p {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 50%;     /* changed font to percent */
 	color: #333;
 	line-height: 1;
 }
+
 body {
 	background-color: #fdfdfd;
 	margin: 0;
 	position:relative;
 }
-ul, li {
+ul,
+li 
+{
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 0.8em;    /* change font to em */
 	color: #333;
 }
+
 a {
 	color: orange;
 	text-decoration: none;
 }
-a:hover, a:focus {
+
+a:hover, 
+a:focus {
 	color: #3397db;
 	text-decoration: none;
 }
+
 a img{
 	border: none 0em #fff;     /* change px to em */
 }
-h1, h2, h3, h4, h5, h6 {
+
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6 {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0 0 1.25em;            /* change px to em */
 }
