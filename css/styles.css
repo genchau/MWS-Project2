@@ -89,7 +89,7 @@ nav h1 {
 }
 nav h1 a {
   color: #fff;
-  font-size: .5em;                /* change px to em */
+  font-size: 2em;                /* change px to em */
   font-weight: 200;
   letter-spacing: 0.1em;
   text-transform: uppercase;
