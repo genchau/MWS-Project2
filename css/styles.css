@@ -89,7 +89,7 @@ nav h1 {
 }
 nav h1 a {
   color: #fff;
-  font-size: 2em;                /* change px to em */
+  font-size: .5em;                /* change px to em */
   font-weight: 200;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -141,7 +141,7 @@ nav h1 a {
 }
 .filter-options h2 {
   color: white;
-  font-size: 1rem;
+  font-size: 1em;  /* changed to 1em for readibility */
   font-weight: normal;
   line-height: 1.5;
   margin: 0 0.75em;
