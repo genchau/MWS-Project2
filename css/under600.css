@@ -1,0 +1,30 @@
+body {
+  font-size:50%;
+}
+
+nav {
+  height:6em;
+}
+
+.filter-options h2 {
+  font-size: 1.5em;
+}
+
+.filter-options select {
+  font-size: 1.5em;
+}
+
+.filter-options {
+  height: 12em;
+}
+
+#restaurants-list li {
+  width:calc((100% - 100px)/2);  /* used to display restaurants side by side suggested by fellow student Levi in slack     */
+
+  margin:0 0 0 0;
+}
+
+#footer {
+  font-size: 0.5em;
+  letter-spacing: .05em;
+}
