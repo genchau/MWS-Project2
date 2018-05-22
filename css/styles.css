@@ -176,7 +176,7 @@ nav h1 a {
   font-family: Arial,sans-serif;
   min-height: 25em;
   text-align: left;
-  width:calc((100% - 100px)/4);  /* used to display restaurants side by side suggested by fellow student Levi in slack     */
+  width:calc((100% - 100px)/3);  /* used to display restaurants side by side suggested by fellow student Levi in slack     */
 }
 #restaurants-list .restaurant-img {
   background-color: #ccc;
