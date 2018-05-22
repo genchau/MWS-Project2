@@ -169,6 +169,7 @@ nav h1 a {
   width: 95%;
   margin-right:2.5%;
   margin-left:2.5%;
+  padding-left: 0;
 }
 #restaurants-list li {
   background-color: #fff;
