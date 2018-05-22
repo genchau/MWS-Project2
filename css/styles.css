@@ -237,7 +237,7 @@ nav h1 a {
   bottom: 0;
   position: absolute;
   width: 100%;
-  font-size: 25%;
+  font-size: 50%;    /* making easier to tap */
 }
 #restaurant-name {
   color: #f18200;
