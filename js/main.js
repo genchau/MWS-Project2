@@ -146,7 +146,12 @@ createRestaurantHTML = (restaurant) => {
   li.append(image);
 
   const name = document.createElement('h1');
-  name.innerHTML = restaurant.name;
+  /* add span to restaurant to format smaller names */
+  if (restaurant.name.length < 10) {
+    name.innerHTML = '<span class="smallName">' + restaurant.name + '</span>';
+  } else {
+    name.innerHTML = '<span class="largeName">' + restaurant.name + '</span>';
+  }
   li.append(name);
 
   const neighborhood = document.createElement('p');
