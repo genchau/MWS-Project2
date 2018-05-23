@@ -178,6 +178,8 @@ nav h1 a {
   min-height: 25em;
   text-align: left;
   width:calc((100% - 100px)/3);  /* used to display restaurants side by side suggested by fellow student Levi in slack     */
+  display: flex;            /*  used to positiom View Detail - from Stack Overflow */
+  flex-direction: column;
 }
 #restaurants-list .restaurant-img {
   background-color: #ccc;
@@ -218,6 +220,7 @@ nav h1 a {
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
+  margin-top:auto;
 }
 
 /* ====================== Restaurant Details ====================== */
