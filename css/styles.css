@@ -169,6 +169,7 @@ nav h1 a {
   width: 95%;
   margin-right:2.5%;
   margin-left:2.5%;
+  position:relative;
 }
 #restaurants-list li {
   background-color: #fff;
@@ -196,6 +197,12 @@ nav h1 a {
   margin: 1.25em 0 0.625em;
   text-transform: uppercase;
 }
+
+.smallName {
+  font-size: 1.2em;
+  font-weight: 200;
+}
+
 #restaurants-list p {
   margin: 0;
   font-size: 1.5em;
