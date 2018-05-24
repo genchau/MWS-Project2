@@ -218,7 +218,7 @@ nav h1 a {
   margin: 0.95em 0 0;
   padding: 0.5em 1.9em 0.625em;
   text-align: center;
-  text-decoration: none;
+  text-decoration: underline;
   text-transform: uppercase;
   margin-top:auto;
 }
