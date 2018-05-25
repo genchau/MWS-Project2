@@ -58,6 +58,8 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   const image = document.getElementById('restaurant-img');
   image.className = 'restaurant-img';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
+   /* Add lowsrc to image for phones */
+   image.lowsrc = image.src.slice(0, -4) + "-small.jpg";
   /*  Add alt to image */
   image.setAttribute('alt',name.innerHTML);
 
