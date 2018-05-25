@@ -1,4 +1,4 @@
-var staticCacheName = 'restreview-static-v1';
+var staticCacheName = 'rrreview-static-v1';
 
 /* service worker code is from Udacity course on mobile web design */
 
