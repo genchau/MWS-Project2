@@ -1,4 +1,4 @@
-var staticCacheName = 'rrreview-static-v1';
+var staticCacheName = 'rrreview-static-v2';
 
 /* service worker code is from Udacity course on mobile web design */
 
@@ -6,12 +6,14 @@ self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open(staticCacheName).then(function(cache) {
       return cache.addAll([
-        'index.html',
-        'restaurant.html',
-        'js/main.js',
-        'js/dbhelper.js',
-        'js/restaurant_info.js',
-        'css/styles.css',
+        '/',
+        '/index.html',
+        '/restaurant.html',
+        '/js/main.js',
+        '/js/dbhelper.js',
+        '/js/restaurant_info.js',
+        '/css/styles.css',
+        '/data/restaurants.json'
       ]);
     })
   );
