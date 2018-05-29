@@ -18,7 +18,7 @@ body {
 	position:relative;
 }
 ul,
-li 
+li
 {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 0.8em;    /* change font to em */
@@ -30,7 +30,7 @@ a {
 	text-decoration: none;
 }
 
-a:hover, 
+a:hover,
 a:focus {
 	color: #3397db;
 	text-decoration: none;
@@ -40,11 +40,11 @@ a img{
 	border: none 0em #fff;     /* change px to em */
 }
 
-h1, 
-h2, 
-h3, 
-h4, 
-h5, 
+h1,
+h2,
+h3,
+h4,
+h5,
 h6 {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0 0 1.25em;            /* change px to em */
@@ -68,7 +68,7 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
   background-color: #000051;
   color: #03a9f4;
   font-size: 1.0em;     /* change px to em */
-  letter-spacing: .1em; 
+  letter-spacing: .1em;
   padding: 1em;
   text-align: center;
   text-transform: uppercase;
@@ -86,6 +86,7 @@ nav {
 }
 nav h1 {
   margin: auto;
+  padding: 0.2em;
 }
 nav h1 a {
   color: #67daff;
