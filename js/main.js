@@ -139,10 +139,12 @@ createRestaurantHTML = (restaurant) => {
   const li = document.createElement('li');
 
   const image = document.createElement('img');
-  image.className = 'restaurant-img';
-  image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  image.className = 'restaurant-img lazyload';    //added lazyload to class
+  // image.src = DBHelper.imageUrlForRestaurant(restaurant);  changed image source for lazyloading
+  // image.src = "/img/handtinyblack.gif";
+  image.setAttribute('data-src', DBHelper.imageUrlForRestaurant(restaurant));
     /* Add lowsrc to image for phones */
-  image.lowsrc = image.src.slice(0, -4) + "-small.jpg";
+  image.lowsrc = DBHelper.imageUrlForRestaurant(restaurant).slice(0, -4) + "-small.jpg";
     /*  Add alt to image */
   image.setAttribute('alt',restaurant.name);
   li.append(image);
