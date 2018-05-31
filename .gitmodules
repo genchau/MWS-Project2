@@ -1,0 +1,3 @@
+[submodule "mws-restaurant-stage-2"]
+	path = mws-restaurant-stage-2
+	url = https://github.com/udacity/mws-restaurant-stage-2.git
