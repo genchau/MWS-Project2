@@ -152,6 +152,8 @@ class DBHelper {
    */
   static imageUrlForRestaurant(restaurant) {
     /* add extension to filename */
+    if (restaurant.photograph == undefined)
+      restaurant.photograph = restaurant.id;
     return (`/img/${restaurant.photograph}`+ ".jpg");
   }
 
