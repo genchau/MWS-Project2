@@ -141,7 +141,7 @@ createRestaurantHTML = (restaurant) => {
   const image = document.createElement('img');
   image.className = 'restaurant-img lazyload';    //added lazyload to class
   // image.src = DBHelper.imageUrlForRestaurant(restaurant);  changed image source for lazyloading
-  // image.src = "/img/handtinyblack.gif";
+  image.src = "/img/handtinyblack.gif";
   image.setAttribute('data-src', DBHelper.imageUrlForRestaurant(restaurant));
     /* Add lowsrc to image for phones */
   image.lowsrc = DBHelper.imageUrlForRestaurant(restaurant).slice(0, -4) + "-small.jpg";
