@@ -145,6 +145,11 @@ createRestaurantHTML = (restaurant) => {
   image.setAttribute('data-src', DBHelper.imageUrlForRestaurant(restaurant));
     /* Add lowsrc to image for phones */
   image.lowsrc = DBHelper.imageUrlForRestaurant(restaurant).slice(0, -4) + "-small.jpg";
+    /* Add srcset for responsive images */
+  image.setAttribute('srcset', DBHelper.imageUrlForRestaurant(restaurant).slice(0, -4) + "-large.jpg 2x " +
+    DBHelper.imageUrlForRestaurant(restaurant).slice(0, -4) + "-medium.jpg 1x " +
+    DBHelper.imageUrlForRestaurant(restaurant).slice(0, -4) + "-small.jpg 100w");
+
     /*  Add alt to image */
   image.setAttribute('alt',restaurant.name);
   li.append(image);

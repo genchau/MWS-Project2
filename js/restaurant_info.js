@@ -62,6 +62,10 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
    image.lowsrc = image.src.slice(0, -4) + "-small.jpg";
   /*  Add alt to image */
   image.setAttribute('alt',name.innerHTML);
+    /* add srcset for responsive images */
+  image.setAttribute('srcset', DBHelper.imageUrlForRestaurant(restaurant).slice(0, -4) + "-large.jpg 2x " +
+    DBHelper.imageUrlForRestaurant(restaurant).slice(0, -4) + "-medium.jpg 1x " +
+    DBHelper.imageUrlForRestaurant(restaurant).slice(0, -4) + "-small.jpg 100w");
 
   const cuisine = document.getElementById('restaurant-cuisine');
   cuisine.innerHTML = restaurant.cuisine_type;
