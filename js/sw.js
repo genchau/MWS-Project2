@@ -13,7 +13,6 @@ self.addEventListener('install', function(event) {
         '/js/dbhelper.js',
         '/js/restaurant_info.js',
         '/css/styles.css',
-        '/data/restaurants.json'
       ]);
     })
   );
