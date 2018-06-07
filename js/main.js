@@ -2,6 +2,7 @@ let restaurants,
   neighborhoods,
   cuisines
 var map
+var mymap
 var markers = []
 
 /**
@@ -77,7 +78,7 @@ window.initMap = () => {
     lng: -73.987501
   };
   let leaflet = [loc.lat, loc.lng];
-  var mymap = L.map('mapid').setView(leaflet, 12);    //* leaflet code
+  mymap = L.map('mapid').setView(leaflet, 12);    //* leaflet code
   L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
     maxZoom: 18,
@@ -190,6 +191,12 @@ createRestaurantHTML = (restaurant) => {
   return li
 }
 
+function onClick(e) {
+  //console.log(this.options.win_url);
+  debugger;
+  window.open(this.marker.url);
+}
+
 /**
  * Add markers for current restaurants to the map.
  */
@@ -197,6 +204,12 @@ addMarkersToMap = (restaurants = self.restaurants) => {
   restaurants.forEach(restaurant => {
     // Add marker to the map
     const marker = DBHelper.mapMarkerForRestaurant(restaurant, self.map);
+    //*leafmap marker code
+    L.marker([marker.lat,marker.lng]).addTo(mymap)
+    .bindPopup(marker.title)
+    .openPopup();
+    mymap.on('click', onClick);
+    //*
     google.maps.event.addListener(marker, 'click', () => {
       window.location.href = marker.url
     });
