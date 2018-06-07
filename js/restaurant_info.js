@@ -17,16 +17,8 @@ window.initMap = () => {
         id: 'mapbox.streets',
         accessToken: 'pk.eyJ1Ijoia2F0aHdlYXZlciIsImEiOiJjamkzb3cydnIwMHRvM2txY25zdGxiMTJlIn0.Q2vjPob84qXvilM4vhMeaA'
     }).addTo(mymap);
-    /* google map code */
-      self.map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 16,
-        center: restaurant.latlng,
-        scrollwheel: false
-      });
       fillBreadcrumb();
-      DBHelper.mapMarkerForRestaurant(self.restaurant, self.map);
       var marker = L.marker([restaurant.latlng.lat,restaurant.latlng.lng]).addTo(mymap);
-      debugger;
     }
   });
 }
