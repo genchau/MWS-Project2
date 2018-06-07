@@ -9,6 +9,13 @@ window.initMap = () => {
     if (error) { // Got an error!
       console.error(error);
     } else {
+      var mymap = L.map('mapid').setView([restaurant.latlng.lat,restaurant.latlng.lng], 13);
+      L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        maxZoom: 18,
+        id: 'mapbox.streets',
+        accessToken: 'pk.eyJ1Ijoia2F0aHdlYXZlciIsImEiOiJjamkzb3cydnIwMHRvM2txY25zdGxiMTJlIn0.Q2vjPob84qXvilM4vhMeaA'
+    }).addTo(mymap);
       self.map = new google.maps.Map(document.getElementById('map'), {
         zoom: 16,
         center: restaurant.latlng,
