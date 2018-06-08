@@ -129,12 +129,7 @@ nav h1 a {
 }
 /* ====================== Map ====================== */
 #mapid{
-  height: 75em;
-  width: 100%;
-  background-color: #ccc;
-}
-#map {
-  height: 24.5em;
+  height: 25em;
   width: 100%;
   background-color: #ccc;
 }
@@ -243,11 +238,6 @@ nav h1 a {
   right: 0;
   top: 2.4em;
   width: 50%;
-}
-.inside #map {
-  background-color: #ccc;
-  height: 100%;
-  width: 100%;
 }
 .inside #map {
   background-color: #ccc;
