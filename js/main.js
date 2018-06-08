@@ -199,7 +199,7 @@ addMarkersToMap = (restaurants = self.restaurants) => {
     // Add marker to the map
     const marker = DBHelper.mapMarkerForRestaurant(restaurant, self.map);
     //*leafmap marker code
-    const markerURL = "<a href=" + marker.url + "></a>";
+    const markerURL = "<a href=" + marker.url + ">" + restaurant.name + "</a>";
     L.marker([marker.lat,marker.lng]).addTo(mymap)
     .bindPopup(markerURL)
     //* google maps
