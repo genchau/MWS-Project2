@@ -69,10 +69,10 @@ fillCuisinesHTML = (cuisines = self.cuisines) => {
 }
 
 /**
- * Initialize Google map, called from HTML.
+ * Initialize leaflet map, called from HTML.
  */
 window.initMap = () => {
-
+  //define and initalize location though
   let loc = {
     lat: 40.722216,
     lng: -73.987501
@@ -85,11 +85,6 @@ window.initMap = () => {
     id: 'mapbox.streets',
     accessToken: 'pk.eyJ1Ijoia2F0aHdlYXZlciIsImEiOiJjamkzb3cydnIwMHRvM2txY25zdGxiMTJlIn0.Q2vjPob84qXvilM4vhMeaA'
 }).addTo(mymap);
-  self.map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 12,
-    center: loc,
-    scrollwheel: false
-  });
   updateRestaurants();
 }
 
@@ -202,10 +197,5 @@ addMarkersToMap = (restaurants = self.restaurants) => {
     const markerURL = "<a href=" + marker.url + ">" + restaurant.name + "</a>";
     L.marker([marker.lat,marker.lng]).addTo(mymap)
     .bindPopup(markerURL)
-    //* google maps
-    google.maps.event.addListener(marker, 'click', () => {
-      window.location.href = marker.url
-    });
-    self.markers.push(marker);
   });
 }
