@@ -121,8 +121,9 @@ resetRestaurants = (restaurants) => {
   ul.innerHTML = '';
 
   // Remove all map markers
- /* self.markers.forEach(m => m.setMap(null));
-  self.markers = [];  */
+  for(i=0;i<markers.length;i++) {
+    mymap.removeLayer(markers[i]);
+    }
   self.restaurants = restaurants;
 }
 
@@ -193,8 +194,15 @@ addMarkersToMap = (restaurants = self.restaurants) => {
   restaurants.forEach(restaurant => {
     //*leafmap marker code
     const markerURL = "<a href=" + DBHelper.urlForRestaurant(restaurant) + ">" + restaurant.name + "</a>";
+    /*
     L.marker([restaurant.latlng.lat,restaurant.latlng.lng]).addTo(mymap)
     .bindPopup(markerURL)
-    self.markers.push(L.marker);
+    self.markers.push(L.marker); */
+
+    var Lmarker =  L.marker([restaurant.latlng.lat,restaurant.latlng.lng]);
+    markers.push(Lmarker);
+    Lmarker.addTo(mymap)
+    .bindPopup(markerURL);
+
   });
 }
