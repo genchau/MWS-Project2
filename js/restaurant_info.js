@@ -1,5 +1,4 @@
 let restaurant;
-var map;
 
 /*  Intialize leaflet map             */
 window.initMap = () => {
