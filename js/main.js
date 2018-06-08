@@ -121,8 +121,8 @@ resetRestaurants = (restaurants) => {
   ul.innerHTML = '';
 
   // Remove all map markers
-  self.markers.forEach(m => m.setMap(null));
-  self.markers = [];
+ /* self.markers.forEach(m => m.setMap(null));
+  self.markers = [];  */
   self.restaurants = restaurants;
 }
 
@@ -192,7 +192,7 @@ createRestaurantHTML = (restaurant) => {
 addMarkersToMap = (restaurants = self.restaurants) => {
   restaurants.forEach(restaurant => {
     // Add marker to the map
-    const marker = DBHelper.mapMarkerForRestaurant(restaurant, self.map);
+    const marker = DBHelper.mapMarkerForRestaurant(restaurant, self.mymap);
     //*leafmap marker code
     const markerURL = "<a href=" + marker.url + ">" + restaurant.name + "</a>";
     L.marker([marker.lat,marker.lng]).addTo(mymap)
