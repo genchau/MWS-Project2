@@ -1,9 +1,7 @@
 let restaurant;
 var map;
 
-/**
- * Initialize Google map, called from HTML.
- */
+/*  Intialize leaflet map             */
 window.initMap = () => {
   fetchRestaurantFromURL((error, restaurant) => {
     if (error) { // Got an error!
