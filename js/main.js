@@ -191,12 +191,6 @@ createRestaurantHTML = (restaurant) => {
   return li
 }
 
-function onClick(e) {
-  //console.log(this.options.win_url);
-  debugger;
-  window.open(this.marker.url);
-}
-
 /**
  * Add markers for current restaurants to the map.
  */
@@ -205,11 +199,10 @@ addMarkersToMap = (restaurants = self.restaurants) => {
     // Add marker to the map
     const marker = DBHelper.mapMarkerForRestaurant(restaurant, self.map);
     //*leafmap marker code
+    const markerURL = "<a href=" + marker.url + "></a>";
     L.marker([marker.lat,marker.lng]).addTo(mymap)
-    .bindPopup(marker.title)
-    .openPopup();
-    mymap.on('click', onClick);
-    //*
+    .bindPopup(markerURL)
+    //* google maps
     google.maps.event.addListener(marker, 'click', () => {
       window.location.href = marker.url
     });
