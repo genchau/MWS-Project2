@@ -193,7 +193,7 @@ createRestaurantHTML = (restaurant) => {
 addMarkersToMap = (restaurants = self.restaurants) => {
   restaurants.forEach(restaurant => {
     //*leafmap marker code
-    const markerURL = "<a href=" + DBHelper.urlForRestaurant(restaurant) + ">" + restaurant.name + "</a>";
+    const markerURL = "<a href=" + DBHelper.urlForRestaurant(restaurant) + ">" + "See details: " + restaurant.name + "</a>";
     /*
     L.marker([restaurant.latlng.lat,restaurant.latlng.lng]).addTo(mymap)
     .bindPopup(markerURL)
