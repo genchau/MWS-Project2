@@ -16,15 +16,21 @@ class DBHelper {
    * Fetch all restaurants.
    */
 
-  static addImage(data){
-    debugger;
-  }
-
   static fetchRestaurants(callback) {
 
     fetch(DBHelper.DATABASE_URL)
     .then(response => response.json())
-      .then(DBHelper.addImage);
+      .then(DBHelper.addImage)
+      .catch(e => requestError(e,'restaurants'));
+
+      function addImage(data){
+        debugger;
+      }
+
+      function requestError(e,part) {
+        console.log(e);
+      }
+      
   }
 
   /**
