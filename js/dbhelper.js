@@ -156,22 +156,4 @@ class DBHelper {
       restaurant.photograph = restaurant.id;
     return (`/img/${restaurant.photograph}`+ ".jpg");
   }
-
-  /**
-   * Map marker for a restaurant.
-
-  static mapMarkerForRestaurant(restaurant, map) {
-    const marker = new google.maps.Marker({
-      position: restaurant.latlng,
-      //* latitude and longitude for leaflet map
-      lat: restaurant.latlng.lat,
-      lng: restaurant.latlng.lng,
-      title: restaurant.name,
-      url: DBHelper.urlForRestaurant(restaurant),
-      map: map,
-      animation: google.maps.Animation.DROP}
-    );
-    return marker;
-  }
-*/
 }
