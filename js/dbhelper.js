@@ -21,8 +21,8 @@ class DBHelper {
     fetch(DBHelper.DATABASE_URL)
     .then(function(response) {
       return response.json();
-    }).then(function(j) {
-      const restaurants = j;
+    }).then(function(returnRestaurants) {
+      const restaurants = returnRestaurants;
       callback(null, restaurants);
     })
     .catch(function(error) {
