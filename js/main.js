@@ -72,7 +72,7 @@ fillCuisinesHTML = (cuisines = self.cuisines) => {
 /**
  * Initialize leaflet map, called from HTML.
  */
-window.initMap = () => {
+initMap = () => {
   //define and initalize location though
   let loc = {
     lat: 40.722216,
