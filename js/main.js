@@ -1,7 +1,6 @@
 let restaurants,
   neighborhoods,
   cuisines
-var map
 var mymap
 var markers = []
 
