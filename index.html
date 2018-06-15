@@ -59,21 +59,6 @@
 
 </body>
 
-<!-- Add code to register the service worker from service worker documenation -->
-<script>
-  if ('serviceWorker' in navigator) {
-  window.addEventListener('load', function() {
-    navigator.serviceWorker.register('/js/sw.js').then(function(registration) {
-      // Registration was successful
-      console.log('ServiceWorker registration successful with scope: ', registration.scope);
-    }, function(err) {
-      // registration failed :(
-      console.log('ServiceWorker registration failed: ', err);
-    });
-  });
-}
-  </script>
-
 <!-- include lazyload so can lazyload images from https://github.com/aFarkas/lazysizes-->
 <script src="/js/lazysizes.min.js" async=""></script>
 </html>
