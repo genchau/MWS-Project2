@@ -158,6 +158,14 @@ nav h1 a {
   padding: 0 0.625em;
   width: 12.50em;
 }
+#cuisines-select:focus,
+#neighborhoods-select:focus {
+  text-decoration: underline;
+  box-shadow: 2px 2px 10px white;
+  outline: 2px solid gray;
+  color: #3397DB;
+}
+
 
 /* ====================== Restaurant Listing ====================== */
 #restaurants-list {
