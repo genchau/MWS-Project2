@@ -9,7 +9,6 @@ var markers = []
  */
 document.addEventListener('DOMContentLoaded', (event) => {
   // Add code to register the service worker from service worker documenation -->
-
   swregister();
   initMap();
   fetchNeighborhoods();

@@ -4,7 +4,7 @@ let restaurant;
 window.initMap = () => {
   swregister();
   fetchRestaurantFromURL((error, restaurant) => {
-    if (error) { // Got an error!
+  if (error) { // Got an error!
       console.error(error);
     } else {
       /*  leaflet map code  */
