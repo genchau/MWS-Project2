@@ -1,4 +1,50 @@
 /**
+ * Indexed DB
+ */
+const updateDB = (function() {
+  'use strict';
+
+  if (!navigator.serviceWorker) {
+    console.log("Did not update database, no service worker installed");
+    return Promise.resolve();
+  }
+
+  const dbPromise = idb.open('restaurant-db', 1, function(upgradeDB){
+    upgradeDB.createObjectStore('restaurants', {keyPath : 'id'});
+  });
+
+function addRestaurantById(restaurant) {
+  debugger;
+  return dbPromise.then(function(db) {
+    const transaction = db.transaction('restaurants', 'readwrite');
+    const store = transaction.objectStore('restaurants');
+    store.put(restaurant);
+    return tx.complete;
+  }).catch(function(error) {
+    // tx.abort();
+    console.log("Unable to add restaurant to IndexedDB", error);
+  });
+}
+
+function fetchRestaurantById(id) {
+  return dbPromise.then(function(db) {
+    const tx = db.transaction('restaurants');
+    const store = tx.objectStore('restaurants');
+    return store.get(parseInt(id));
+  }).then(function(restaurantObject) {
+    return restaurantObject;
+  }).catch(function(e) {
+    console.log("idbApp.fetchRestaurantById errored out:", e);
+  });
+}
+
+return {
+  dbPromise: (dbPromise),
+  addRestaurantById: (addRestaurantById),
+  fetchRestaurantById: (fetchRestaurantById),
+};
+});
+/**
  * Common database helper functions.
  */
 class DBHelper {
@@ -16,8 +62,22 @@ class DBHelper {
    * Fetch all restaurants.
    */
 
-  static fetchRestaurants(callback) {
+  static getData(callback) {
+    updateDB();
+    fetch(DBHelper.DATABASE_URL)
+    .then(function(response) {
+      return response.json();
+    }).then(function(returnRestaurants) {
+      const restaurants = returnRestaurants;
+      updateDB.addRestaurantById(restaurants);
+      callback(null, restaurants);
+    })
+    .catch(function(error) {
+      callback(error, null);
+    })
+  }
 
+  static fetchRestaurants(callback) {
     fetch(DBHelper.DATABASE_URL)
     .then(function(response) {
       return response.json();

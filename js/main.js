@@ -10,11 +10,19 @@ var markers = []
 document.addEventListener('DOMContentLoaded', (event) => {
   // Add code to register the service worker from service worker documenation -->
   swregister();
-  initMap();
+  getData();
   fetchNeighborhoods();
   fetchCuisines();
+  initMap();
 });
 
+getData = () => {
+  DBHelper.getData((error, restaurants) => {
+    if (error) {
+      console.log(error);
+    }
+  })
+}
 /**
  * Fetch all neighborhoods and set their HTML.
  */
