@@ -1,7 +1,7 @@
 /**
  * Indexed DB
  */
-const updateDB = (function() {
+const updateDatabase = (function() {
   'use strict';
 
   if (!navigator.serviceWorker) {
@@ -14,22 +14,21 @@ const updateDB = (function() {
   });
 
 function addRestaurantById(restaurant) {
-  debugger;
-  return dbPromise.then(function(db) {
-    const transaction = db.transaction('restaurants', 'readwrite');
+  return dbPromise.then(function(database) {
+    const transaction = database.transaction('restaurants', 'readwrite');
     const store = transaction.objectStore('restaurants');
     store.put(restaurant);
-    return tx.complete;
+    return transaction.complete;
   }).catch(function(error) {
-    // tx.abort();
+    // transaction failed
     console.log("Unable to add restaurant to IndexedDB", error);
   });
 }
 
 function fetchRestaurantById(id) {
-  return dbPromise.then(function(db) {
-    const tx = db.transaction('restaurants');
-    const store = tx.objectStore('restaurants');
+  return dbPromise.then(function(database) {
+    const transaction = database.transaction('restaurants');
+    const store = transaction.objectStore('restaurants');
     return store.get(parseInt(id));
   }).then(function(restaurantObject) {
     return restaurantObject;
@@ -63,13 +62,14 @@ class DBHelper {
    */
 
   static getData(callback) {
-    updateDB();
+    updateDatabase();
     fetch(DBHelper.DATABASE_URL)
     .then(function(response) {
+      debugger;
       return response.json();
     }).then(function(returnRestaurants) {
       const restaurants = returnRestaurants;
-      updateDB.addRestaurantById(restaurants);
+      addRestaurantById(restaurants);
       callback(null, restaurants);
     })
     .catch(function(error) {
