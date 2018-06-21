@@ -13,36 +13,36 @@ const updateDatabase = (function() {
     upgradeDB.createObjectStore('restaurants', {keyPath : 'id'});
   });
 
-function addRestaurantById(restaurant) {
-  return dbPromise.then(function(database) {
-    const transaction = database.transaction('restaurants', 'readwrite');
-    const store = transaction.objectStore('restaurants');
-    store.put(restaurant);
-    return transaction.complete;
-  }).catch(function(error) {
-    // transaction failed
-    console.log("Unable to add restaurant to IndexedDB", error);
-  });
-}
+  function addRestaurantById(restaurant) {
+    return dbPromise.then(function(database) {
+      const transaction = database.transaction('restaurants', 'readwrite');
+      const store = transaction.objectStore('restaurants');
+      store.put(restaurant);
+      return transaction.complete;
+    }).catch(function(error) {
+      // transaction failed
+      console.log("Unable to add restaurant to IndexedDB", error);
+    });
+  }
 
-function fetchRestaurantById(id) {
-  return dbPromise.then(function(database) {
-    const transaction = database.transaction('restaurants');
-    const store = transaction.objectStore('restaurants');
-    return store.get(parseInt(id));
-  }).then(function(restaurantObject) {
-    return restaurantObject;
-  }).catch(function(e) {
-    console.log("idbApp.fetchRestaurantById errored out:", e);
-  });
-}
+  function fetchRestaurantById(id) {
+    return dbPromise.then(function(database) {
+      const transaction = database.transaction('restaurants');
+      const store = transaction.objectStore('restaurants');
+      return store.get(parseInt(id));
+    }).then(function(restaurantObject) {
+      return restaurantObject;
+    }).catch(function(e) {
+      console.log("idbApp.fetchRestaurantById errored out:", e);
+    });
+  }
 
-return {
-  dbPromise: (dbPromise),
-  addRestaurantById: (addRestaurantById),
-  fetchRestaurantById: (fetchRestaurantById),
-};
-});
+  return {
+    dbPromise: (dbPromise),
+    addRestaurantById: (addRestaurantById),
+    fetchRestaurantById: (fetchRestaurantById),
+  };
+})();
 /**
  * Common database helper functions.
  */
